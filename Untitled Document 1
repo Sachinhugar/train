@@ -1,0 +1,32 @@
+
+#checking the database connection
+
+$sql = new mysqli("localhost", "i95dev","i95dev","ubantuconnection");
+
+echo "<br>";
+if($sql->connect_error){
+    echo " connectio falied";
+}
+else{
+    echo " connection established sucessfully";
+}
+echo "<br>";
+$tc = 'create table tc';
+if ($sql->query(tc)){
+    echo "table not created";
+}
+else{
+    echo " tabel  created";
+}
+
+$update = ' update table tc(id integer , usrnam varchar , pass varchar )'  ;
+echo "<br>";
+if ($sql->query(update)){
+    echo "table not updated";
+}
+else{
+    echo " tabel  updated";
+}
+
+
+?>
